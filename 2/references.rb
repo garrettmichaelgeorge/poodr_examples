@@ -1,4 +1,4 @@
-class ObscuringReferences
+class References
   attr_reader :data
 
   def initialize(data)
