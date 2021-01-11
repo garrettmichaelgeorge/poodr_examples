@@ -1,14 +1,20 @@
 class References
-  attr_reader :data
+  attr_reader :wheels
 
   def initialize(data)
-    @data = data
+    @wheels = wheelify(data)
   end
 
   def diameters
-    # 0 is rim, 1 is tire
+    wheels.collect do |wheel|
+      wheel.rim + (wheel.tire * 2)
+    end
+  end
+
+  Wheel = Struct.new(:rim, :tire)
+  def wheelify(data)
     data.collect do |cell|
-      cell[0] + (cell[1] * 2)
+      Wheel.new(cell[0], cell[1])
     end
   end
 end
