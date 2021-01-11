@@ -10,4 +10,8 @@ class Wheel
     # tire goes around rim twice for diameter
     rim + (tire * 2)
   end
+
+  def circumference
+    diameter * Math::PI
+  end
 end
