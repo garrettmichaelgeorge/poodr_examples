@@ -7,7 +7,7 @@ describe References do
 
   describe '#diameters' do
     it 'calculates the diameters for the data' do
-      # ???
+      _(subject.diameters).must_equal [662, 668, 619, 639]
     end
   end
 end
